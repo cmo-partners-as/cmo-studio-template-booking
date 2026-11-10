@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Bookings{% endblock %}
+{% block wrapclass %}wide{% endblock %}
+{% block body %}
+<div class="nav"><h1>Bookings</h1><a class="btn secondary" style="margin:0" href="/">Public page</a></div>
+{% if not rows %}
+<div class="notice">No bookings yet.</div>
+{% else %}
+<div class="card table-scroll">
+<table>
+  <tr><th>When</th><th>Name</th><th>Email</th><th>Booked on</th></tr>
+  {% for slot, name, email, created in rows %}
+  <tr><td>{{ slot.strftime('%a %d %b %Y, %H:%M') }}</td><td>{{ name }}</td><td><a href="mailto:{{ email }}">{{ email }}</a></td><td class="muted">{{ created.strftime('%d %b %Y') }}</td></tr>
+  {% endfor %}
+</table>
+</div>
+{% endif %}
+{% endblock %}

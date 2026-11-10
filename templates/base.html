@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{{ site_name }}{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="wrap {% block wrapclass %}{% endblock %}">
+{% block body %}{% endblock %}
+</main>
+<footer class="foot"><a href="https://studio.cmopartners.co/?ref=template-booking">Made with CMO Studio</a></footer>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "Booking app",
+  "description": "Visitors pick a time slot and leave their name and email; bookings are saved in Postgres and confirmed by email.",
+  "runtime": "python",
+  "startup": "gunicorn --bind 0.0.0.0:8000 app:app",
+  "database": true,
+  "mail": true,
+  "env": [
+    {"name": "ADMIN_PASSWORD", "description": "Password for /admin (the booking list). Username can be anything.", "secret": true},
+    {"name": "MAIL_FROM", "description": "Sender address for confirmation emails. Must be on your verified domain, e.g. bookings@yourdomain.com", "secret": false},
+    {"name": "BUSINESS_NAME", "description": "Name shown on the page and in emails (optional)", "secret": false},
+    {"name": "OWNER_EMAIL", "description": "Get a copy of each new booking by email (optional)", "secret": false}
+  ]
+}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Booked{% endblock %}
+{% block body %}
+<h1>You are booked</h1>
+<div class="notice ok">
+  <p><strong>{{ when }}</strong></p>
+  <p>A confirmation is on its way to {{ email }}.</p>
+</div>
+<a class="btn secondary" href="/">Back</a>
+{% endblock %}
