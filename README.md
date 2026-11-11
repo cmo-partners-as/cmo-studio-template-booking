@@ -2,6 +2,8 @@
 
 # Booking app
 
+**For AI agents:** read [AGENTS.md](AGENTS.md) and the CMO Studio guide at https://studio.cmopartners.co/llms.txt.
+
 A small booking page. Visitors pick a free time slot, leave their name and email, and get a confirmation email. Bookings are saved in Postgres. You see them in a simple `/admin` list.
 
 Built with Flask. Runs on [CMO Studio](https://studio.cmopartners.co/?ref=template-booking).
